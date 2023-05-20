@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello, world!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="icon" href="favicon.png">
+</head>
+<body style="background-color:rgb(203, 196, 255);">
+    <div class="button">
+        <button type="button" class="btn" onclick="showMsg()">Click Me</button>
+    </div>
+
+    <div class="challengeBtn">
+        <h1>Interactive</h1>
+        <h2>Inputs</h2>
+        <p>Enter your message you would like the page to say</p>
+        <div class="input-group">
+            <input id="msg-input" type="text" class="form-control" placeholder="enter your message">
+            <button type="button" class="btn-two" onclick="notifyMsg()">Notify</button>
+        </div>
+
+        <h2>Change picture</h2>
+        <div class="change-group">
+            <img id="cupcakePic" src="https://leitesculinaria.com/wp-content/uploads/2021/10/classic-vanilla-cupcakes-1.jpg" alt="cupcake" width="300">
+            <button type="button" class="btn-three" onclick="changePic()">Change it</button>
+        </div>
+
+<script>
+    console.log("Hello, Javascript")
+    function showMsg(){
+        alert("Hello")
+    }
+
+    function notifyMsg(){
+        let msg = document.querySelector("#msg-input").value
+        alert(msg)
+    }
+
+    function changePic(){
+        let list = ["https://sweetandsavorymeals.com/wp-content/uploads/2018/03/Unicorn-Cupcakes-4.jpg","https://www.halfbakedharvest.com/wp-content/uploads/2023/03/Luckys-Golden-Ticket-Cupcakes-1.jpg","https://sugargeekshow.com/wp-content/uploads/2022/08/vanilla_cupcake_featured_blog.jpg","https://houseofnasheats.com/wp-content/uploads/2022/10/Oreo-Cupcakes-Square-1.jpg","https://sugarspunrun.com/wp-content/uploads/2022/04/Best-Chocolate-Cupcakes-1-of-1.jpg","https://thefirstyearblog.com/wp-content/uploads/2021/03/ice-cream-cupcakes-square.png"]
+        let randNum = Math.floor(Math.random()*list.length)
+        let randPic = list[randNum]
+        let pic = document.querySelector("#cupcakePic").src=randPic
+    }
+
+</script>
+</body>
+</html>
